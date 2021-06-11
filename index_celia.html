@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Portal de Filmes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+
+    <style>
+        .select-wrap {
+            border: 1px solid #777;
+            border-radius: 4px;
+            padding: 0;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .carrosel-page {
+
+            background-color: #777;
+        }
+
+        .select-wrap label {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            transform: translate(-50%, -50%);
+        }
+
+        select {
+            background-color: #fff;
+            border: 0px;
+            height: 54px;
+            padding-left: 90px;
+        }
+
+        li.border-right {
+            border-right: 1px solid white;
+        }
+
+        #destaques {
+            text-align: left;
+        }
+
+        .fa-star {
+            font-size: 20px;
+            color:#c4302b
+        }
+
+        .bg-light {
+            background-color: 	#FA8072!important;
+        }
+
+        .carrosel-page {
+            display: none;
+        }
+
+        .page-button {
+            cursor: pointer;
+            width: 14px;
+            height: 14px;
+            background: #666;
+            border-radius: 50%;
+            list-style: none;
+        }
+
+        .page-button:not(:first-child) {
+            margin-left: 2px;
+        }
+a {
+    text-decoration:none;
+    color:#c4302b
+}
+        .active-button {
+            background: black;
+        }
+
+        @media only screen and (max-width: 768px) {
+            li.border-right {
+                border: none;
+            }
+
+            #destaques {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark "style="background-color: 	#FA8072;">
+        <div class="container-fluid">
+            <img src="menu.jpeg" width=70 height=70>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">lançamentos</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" aria-current="page" href="#">em destaque</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" aria-current="page" href="#">avaliações</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" aria-current="page" href="#">entrevista & makingoff</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" aria-current="page" href="#">novidades</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn bg-white" type="button" id="button-addon1">
+                                <span class="fas fa-search"></span></button>
+                        </div>
+                        <input type="text" class="form-control bg-white mx-n1" placeholder="Pesquisar" aria-label="Pesquisar">
+                        <div class="input-group-append">
+                            <button class="btn bg-white" type="button" id="button-addon2">
+                                <span class="fas fa-times"></span></button>
+                        </div>
+                </form>
+                <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>
+                </div>
+            </div>
+    </nav>
+    <div class="container-fluid pt-2">
+        <div class="text-center my-4">
+            <h1 id="lancamentos">Lançamentos</h1><br>
+        </div>
+        <div style="margin-top:30px" id="content"></div>
+    </div>
+
+    <!-- Botões -->
+    <ul class="d-flex flex-row justify-content-center mt-5">
+        <li class="page-button active-button" id="page1Button"></li>
+        <li class="page-button" id="page2Button"></li>
+        <li class="page-button" id="page3Button"></li>
+        <li class="page-button" id="page4Button"></li>
+    </ul>
+    <!--Pagina 1 carrosel-->
+    <div id="page1" class="carrosel-page">
+        <div class="container-fluid">
+            <div class="row mx-4">
+                <div class="col-md-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/8VN_l57QWyQ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-4 h3">Guardiões da Galáxia</p>
+                    <h5 class="h5 mb-4"><b>Sinopse:</b> O aventureiro do espaço Peter Quill torna-se presa de caçadores
+                        de recompensas depois que rouba a esfera de um vilão traiçoeiro, Ronan. Para escapar do perigo,
+                        ele faz uma aliança com um grupo de quatro extraterrestres. Quando Quill descobre que a esfera
+                        roubada possui um poder capaz de mudar os rumos do universo, ele e seu grupo deverão proteger o
+                        objeto para salvar o futuro da galáxia.
+                    </h5>
+                    <div class="row mx-auto mb-3">
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Diretor:</b> James Gunn</p>
+                        </div>
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Roteirista:</b> Justin Lin</p>
+                        </div>
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Estreia:</b> 2014</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="h5"><b>Elenco:</b></p>
+                        <p class="h5"> Chris Pratt, Zoe Saldana, Dave Bautista</p>
+                    </div>
+                    <div class="mt-4">
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pagina 2 carrosel-->
+    <div id="page2" class="carrosel-page">
+        <div class="container-fluid">
+            <div class="row mx-4">
+                <div class="col-md-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Y5BejyusI2s"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-4 h3">Mulher-Maravilha 1984</p>
+                    <h5 class="h5 mb-4"><b>Sinopse:</b> Mulher-Maravilha 1984 acompanha Diana Prince/Mulher-Maravilha
+                        (Gal Gadot) em
+                        1984, durante a Guerra Fria, entrando em conflito com dois grande inimigos - o empresário de
+                        mídia Maxwell Lord (Pedro Pascal) e a amiga que virou inimiga Barbara Minerva/Cheetah
+                        (Kristen Wiig) - enquanto se reúne com seu interesse amoroso Steve Trevor (Chris Pine).
+                    </h5>
+                    <div class="row mx-auto mb-3">
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Diretora:</b> Patty Jenkins</p>
+                        </div>
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Roteirista:</b> Patty Jenkins</p>
+                        </div>
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Estreia:</b> 2020</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="h5"><b>Elenco:</b></p>
+                        <p class="h5">Vin Diesel | Michelle Rodriguez | Tyrese Gibson | Ludacris | John Cena
+                            | Jordana Brewster | Nathalie Emmanuel | Sung Kang</p>
+                    </div>
+                    <div class="mt-4">
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="far fa-star"></span>
+                        <span class="far fa-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pagina 3 carrosel-->
+    <div id="page3" class="carrosel-page">
+        <div class="container-fluid">
+            <div class="row mx-4">
+                <div class="col-md-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/i4o8zysEr-A"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-4 h3">Bela Vingança</p>
+                    <p class="h5 mb-4"><b>Sinopse:</b>Nada na vida de Cassie é o que parece ser. Ela é perversamente
+                        inteligente, tentadoramente astuta e ainda vive uma vida dupla secreta à noite. Agora, um
+                        encontro inesperado está prestes a dar a Cassie a chance de corrigir os erros do passado.
+                    </p>
+                    <div class="row mx-auto mb-3">
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Diretor:</b> Emerald Fennell</p>
+                        </div>
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Roteirista:</b> Justin Lin</p>
+                        </div>
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Estreia:</b> 2021</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="h5"><b>Elenco:</b></p>
+                        <p class="h5"> Carey Mulligan,Adam Brody,Ray Nicholson
+                            Sam Richardson,Timothy E. Goodwin, Clancy Brown,Jennifer Coolidge, Laverne Cox, Alli Hart,
+                            Loren Paul</p>
+                    </div>
+                    <div class="mt-4">
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pagina 4 carrosel-->
+    <div id="page4" class="carrosel-page">
+        <div class="container-fluid">
+            <div class="row mx-4">
+                <div class="col-md-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/mLWJfHCU7b4" title="YouTube video"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-4 h3">Velozes & Furiosos 9 | Trailer 2 Dublado</p>
+                    <p class="h5 mb-4"><b>Sinopse:</b> Em Velozes & Furiosos 9, Dominic Toretto (Vin Diesel) e Letty
+                        (Michelle
+                        Rodriguez) vivem uma vida pacata ao lado de seu filho Brian. Mas eles logo são ameaçados
+                        pelo passado de Dom: seu irmão desaparecido Jakob
+                        (John Cena). Trata-se de um assassino habilidoso e motorista excelente, que está trabalhando
+                        ao lado de Cipher (Charlize Theron), vilã de Velozes & Furiosos 8. Para enfrentá-los,
+                        Toretto vai precisar reunir sua equipe novamente,
+                        inclusive Han (Sung Kang), que todos acreditavam estar morto.
+                    </p>
+                    <div class="row mx-auto mb-3">
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Diretor:</b> Justin Lin</p>
+                        </div>
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Roteirista:</b> Justin Lin</p>
+                        </div>
+                        <div class="col-md-4 col-sm pr-md-2 p-0">
+                            <p class="h5"><b>Estreia:</b> 2021</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="h5"><b>Elenco:</b></p>
+                        <p class="h5">Vin Diesel | Michelle Rodriguez | Tyrese Gibson | Ludacris | John Cena
+                            | Jordana Brewster | Nathalie Emmanuel | Sung Kang</p>
+                    </div>
+                    <div class="mt-4">
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <div class="row mb-3 justify-content-center">
+            <div class="col-12 col-sm-8 mb-sm-0 mb-4 align-self-center">
+                <h1 class="mb-0" id="destaques">Em destaque</h1>
+            </div>
+            <div class="col-8 col-sm-4 select-wrap">
+                <label>Categoria: </label>
+                <select style="width: 100%;">
+                    <option value="todos" selected>Todos</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="romance">Romance</option>
+                    <option value="comedia">Comédia</option>
+                </select>
+            </div>
+        </div>
+        <div class="row m-auto">
+            <div class="container-fluid p-0">
+                <div class="row m-auto">
+                    <div class="col mt-3" align="center">
+                        <a href="#">
+                            <img width="225" src="imagem1.jpg">
+                        </a>
+                    </div>
+                    <div class="col mt-3" align="center">
+                        <a href="#">
+                            <img width="225" src="imagem2.jpg">
+                        </a>
+                    </div>
+                    <div class="col mt-3" align="center">
+                        <a href="#">
+                            <img width="225" src="imagem3.jpg">
+                        </a>
+                    </div>
+                    <div class="col mt-3" align="center">
+                        <a href="#">
+                            <img width="225" src="imagem4.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-md-end justify-content-center">
+                <button class="btn btn-dark mt-5"><span class="fas fa-plus" style="margin-right: 10px;"></span>Carregar
+                    mais filmes</button>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-2">
+        <h2>Últimas avaliações</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="icone2.jpg" class="rounded-circle" width="80">
+                    </div>
+                    <div class="col">
+                        <h3>Josiane Perdigão</h3>
+                        <p><b>Avaliação: </b>O filme cumpre o que promete, sequencias rápidas prendem nossa atenção,
+                            alguns furos na historia, mas nada que prejudique o enredo do filme.
+
+                        </p>
+                        <div class="mt-4">
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="far fa-star"></span><b> 24/04/2021</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="icone3.jpg" class="rounded-circle" width="80">
+                    </div>
+                    <div class="col">
+                        <h3>Mickaelly Silva</h3>
+                        <p><b>Avaliação: </b>Filme com o enredo que segura a atenção do começo ao fim. Bons sustos e
+                            história diferente do que se tem visto. Muito bom.
+                        </p>
+                        <div class="mt-4">
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span><b> 24/04/2021</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="icone1.jpg" class="rounded-circle" width="80">
+                    </div>
+                    <div class="col">
+                        <h3>Max Gabriel</h3>
+                        <p><b>Avaliação: </b>Ótimo filme. Surpreende no final. Excelente escolha dos personagens.
+                        </p>
+                        <div class="mt-4">
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="far fa-star"></span><b> 24/04/2021</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-md-end justify-content-center">
+            <button class="btn btn-dark mt-5"><span class="fas fa-plus" style="margin-right: 10px;"></span>Carregar
+                mais avaliações</button>
+        </div>
+    </div>
+    <div class="container pt-2">
+        <h3 class="mb-4">Entrevistas &amp; Making of</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9 mb-3">
+                    <iframe src="https://www.youtube.com/embed/2ZrKUeJa6vk"" allowfullscreen=""
+                    class=" embed-responsive-item"
+                        title=" YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+                </div>
+                <h4>VINGADORES: ULTIMATO</h4>
+                <div class="row">
+                    <div class="col-auto pr-0">
+                        <p class="mb-0"><b>Diretor:</b> Joe Russo</p>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <p class="mb-0"><b>Roteiro:</b>Christopher Markus</p>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <p class="mb-0"></p><b>Estreia:</b> 2019</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9 mb-3">
+                    <iframe src="https://www.youtube.com/embed/y8m1rOp2E3w" allowfullscreen=""
+                        class="embed-responsive-item" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <h4>ANNABELLE 3 DE VOLTA PARA CASA </h4>
+                <div class="row">
+                    <div class="col-auto pr-0">
+                        <p class="mb-0"><b>Diretor:</b> Gary Dauberman </p>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <p class="mb-0"><b>Roteiro:</b> Gary Dauberman</p>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <p class="mb-0"></p><b>Estreia:</b> 2019</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9 mb-3">
+                    <iframe src="https://www.youtube.com/embed/ss1-joxvnJc" allowfullscreen=""
+                        class="embed-responsive-item" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+                </div>
+                <h4 class="">MORBIUS</h4>
+                <div class="col-auto pr-0">
+                    <p class="mb-0"><b>Diretor:</b> Daniel Espinosa </p>
+                </div>
+                <div class="col-auto pr-0">
+                    <p class="mb-0"><b>Roteiro:</b>Matt Sazama</p>
+                </div>
+                <div class="col-auto pr-0">
+                    <p class="mb-0"></p><b>Estreia:</b>2022</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="d-flex justify-content-md-end justify-content-center">
+                    <button class="btn btn-dark mt-5"><span class="fas fa-plus"
+                            style="margin-right: 10px;"></span>Carregar
+                        mais filmes</button>
+
+                </div>
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-sm-12 col-md-6 col-lg-8">
+                    <div class="card mb-3" style="border:10px;">
+                        <h2>Novidades</h2>
+                        <div class="row g-0">
+                            <div class="card col-sm-12 col-md-4 col-lg-4" style="border:10px;">
+                                <img src="nvd1.jpg" alt="novidades">
+                            </div>
+                            <div class="card col-sm-12 col-md-8 col-lg-8">
+                                <div class="card-body">
+                                    <a href="https://istoe.com.br/tudo-e-novidade-no-oscar-2021/"><h5 class="card-title">Tudo é novidade no Oscar 2021</h5></a>
+                                    <p class="card-text">Tudo é novidade no Oscar 2021
+                                        Steven Soderbergh, diretor do evento, promete surpresas na premiação</p>
+                                    <button type="button" class="btn-1 btn-dark rounded"
+                                        data-mdb-ripple-color="dark">premiação</button>
+                                    <button type="button" class="btn-1 btn-dark rounded"
+                                        data-mdb-ripple-color="dark">oscar</button>
+                                    <button type="button" class="btn-1 btn-dark rounded"
+                                        data-mdb-ripple-color="dark">Hollywood</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="card col-sm-12 col-md-4 col-lg-4" style="border:10px;">
+                                <img src="nvd2.jpeg" alt="novidades">
+                            </div>
+                            <div class="card col-sm-12 col-md-8 col-lg-8">
+                                <div class="card-body">
+                                   <a href="https://www.popsfera.com.br/filme-capitao-america-4-em-desenvolvimento/"><h5 class="card-title">Filme Capitão América 4 em desenvolvimento!</h5></a>
+                                    <p class="card-text"> De acordo com o site The Hollywood Reporter, a Marvel deu o
+                                        start na produção do desenvolvimento do filme Capitão América 4 após o sucesso
+                                        da série Falcão e o Soldado Invernal da Disney+.</p>
+                                    <button type="button" class="btn-1 btn-dark rounded"
+                                        data-mdb-ripple-color="dark">Marvel</button>
+                                    <button type="button" class="btn-1 btn-dark rounded"
+                                        data-mdb-ripple-color="dark">Disney+</button>
+                                    <button type="button" class="btn-1 btn-dark rounded"
+                                        data-mdb-ripple-color="dark">Capitão América 4</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="card col-sm-12 col-md-4 col-lg-4" style="border:10px;">
+                            <img src="nvd3.jpg" alt="novidades">
+                        </div>
+                        <div class="card col-sm-12 col-md-8 col-lg-8">
+                            <div class="card-body">
+                               <a href="https://legadodamarvel.com.br/trailer-de-venom-2-ja-tem-data-para-ser-lancado-confira/"><h5 class="card-title">Trailer de Venom 2 já tem data para ser lançado</h5></a> 
+                                <p class="card-text">Venom 2: Tempo de Carnificina é um dos próximos lançamentos da Marvel dentro da Sony, previsto para setembro de 2021.</p>
+                                <button type="button" class="btn-1 btn-dark rounded"
+                                    data-mdb-ripple-color="dark">Marvel</button>
+                                <button type="button" class="btn-1 btn-dark rounded" data-mdb-ripple-color="dark"> Venom
+                                    2</button>
+                                <button type="button" class="btn-1 btn-dark rounded"
+                                    data-mdb-ripple-color="dark">lançamentoo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body pb-0">
+                            <h2>Sobre</h2>
+                            <p> O portal foi desenvolvido pensando nas pessoas que gostam de filmes, que desejam saber
+                                tudo em primeiro momento que acontece nos cinemas.
+                            </p>
+                            <h2>Editorial</h2>
+                            <p><i class="fas fa-user" aria-hidden="true"></i><strong> Redação: </strong> Célia Regina
+                                Perdigão
+                            </p>
+                            <p><i class="fas fa-user" aria-hidden="true"></i><strong> Pesquisa: </strong> Célia Regina
+                                Perdigão
+                            </p>
+                            <p><i class="fas fa-user" aria-hidden="true"></i><strong> Gerente geral: </strong> Célia
+                                Regina Perdigão</p>
+                            <h3>redes sociais:</h3>
+                            <div class="row">
+                                <div class="col-2"><i class="fab fa-facebook-square fa-3x" style="color:#3b5998;"></i></div>
+                                <div class="col-2"><i class="fab fa-twitter fa-3x" style="color:#00acee;"></i></div>
+                                <div class="col-2"><i class="fab fa-youtube fa-3x" style="color:#c4302b;"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-light p-4">
+            <div class="d-flex justify-content-between container">
+                <span>Copyright 2021 - Disciplina de Desenvolvimento de Interfaces Web - <b>ICEI PUC Minas</b></span>
+                <img src="menu.jpeg" width=70 height=70>
+            </div>
+        </footer>
+
+
+        <!-- Bootstrap Js -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+        <!-- Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"
+            integrity="sha256-2JRzNxMJiS0aHOJjG+liqsEOuBb6++9cY4dSOyiijX4=" crossorigin="anonymous"></script>
+        <script>
+            var delay = 10000 // segundos para trocar de página
+            var pages = ["#page1","#page2","#page3","#page4"]
+            page = -1
+            $(".page-button").click(function (element) {
+                index = $(this).attr("id").substring(4, 5)
+                page = index - 1
+                setPage(pages[page])
+            })
+            nextPage()
+            setInterval(function () {
+                nextPage()
+            }, delay)
+
+            function nextPage() {
+                page++
+                if (page == pages.length) {
+                    page = 0
+                }
+                setPage(pages[page])
+            }
+
+            function setPage(page) {
+                $("#content").html($(page).html())
+                $(".active-button").removeClass("active-button")
+                $(page +"Button").addClass("active-button")
+            }
+        </script>
+</body>
+
+</html>
